@@ -26,20 +26,25 @@ namespace Pool3
             Console.WriteLine();
             Console.WriteLine("Introdu valoarea e: ");
             e = int.Parse(Console.ReadLine());
-            Console.WriteLine("Introdu pozitia unde se va afla valoarea e");
+            Console.WriteLine("Introdu pozitia k unde se va afla valoarea e");
             k = int.Parse(Console.ReadLine());
 
-           
-            for (int i = 0; i < k; i++)
+
+            int[] a = new int[100];
+
+            // inseram elementele vechi in array-ul nou filtrate
+            for (int i = 0; i < n + 1; i++)
             {
-                v[i] = v[i + 1];
+                if (i < k)
+                    a[i] = v[i];
+                else if (i == k)
+                    a[i] = e;
+                else
+                    a[i] = v[i - 1];
             }
-            n++;
 
-            v[k] = e;
-
-            for (int i = 0; i < n; i++)
-                Console.Write(v[i] + " ");
+            for (int i = 0; i < n + 1; i++)
+                Console.Write(a[i] + " ");
 
         }
     }
