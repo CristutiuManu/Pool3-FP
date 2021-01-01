@@ -40,7 +40,7 @@ namespace Pool3
 
             static void reverse(int[] v, int[] a, int n)
             {
-                for (long i = 0; i < n; i++)
+                for (int i = 0; i < n; i++)
                 {
                     a[i] = v[n - i - 1];
                 }
