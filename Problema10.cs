@@ -11,10 +11,7 @@ namespace Pool3
             int n = int.Parse(Console.ReadLine());
             Random random = new Random();
             int[] v = new int[n];
-            int left = 0;
             int k;
-            int right = n - 1;
-            int mid;
             for (int i = 0; i < n; i++)
             {
                 v[i] = random.Next(100);
@@ -29,28 +26,34 @@ namespace Pool3
             Console.WriteLine("Insereaza elementul k");
             k = int.Parse(Console.ReadLine());
 
-            while (left <= right)
-            {
-                if (right >= 1)
-                {
-                    mid = left + (right - left) / 2;
+            
 
-                    if (v[mid] > k)
-                    {
-                        right = mid - 1;
-                    }
-                    else if (v[mid] < k)
-                    {
-                        left = mid + 1;
-                    }
-                    else if (k == v[mid])
-                    {
-                        Console.WriteLine($"Elementul {k} se afla pe pozitia {mid}");
-                        break;
+            void cautareBinara(int []v, int left, int right, int mid)
+            {
+                while (left <= right)
+                {
+                   
+                        mid = (right + left) / 2;
+
+                        if (v[mid] > k)
+                        {
+                            right = mid - 1;
+                        }
+                        else if (v[mid] < k)
+                        {
+                            left = mid + 1;
+                        }
+                        else if (k == v[mid])
+                        {
+                            Console.WriteLine($"Elementul {k} se afla pe pozitia {mid}");
+                            break;
+                        }
                     }
                 }
 
-            }
+            
+
+            cautareBinara(v,0, n-1, 0);
           
 
         }
