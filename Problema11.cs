@@ -13,17 +13,6 @@ namespace Pool3
             bool[] sieve = new bool[101];
             int sol = 0;
 
-            //Console.WriteLine("Vectorul citit este: ");
-            //for (int i = 0; i < n; i++)
-            //    Console.Write(v[i] + " ");
-
-            //Console.WriteLine();
-
-            //for (int i = 0; i < n; i++)
-            //    Console.Write(sieve[i] + " ");
-
-            //Console.WriteLine();
-
             sieve[0] = sieve[1] = true;
 
             for (int i = 2; i * i <= n; i++)
